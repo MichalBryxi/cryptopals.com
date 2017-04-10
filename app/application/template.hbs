@@ -1,12 +1,20 @@
 <h1>Hello from my test!</h1>
 
+Problem: Run this code in your browser, running <code>ember serve</code> and see that the application template is being rendered in infinite loop.
+
+Requirements:
+<ol>
+  <li>Template shown below. That is:</li>
+  <li>\{{bs-dropdown}} component with \{{toggle}} inside.</li>
+  <li>\{{link-to}} to non-existing route.</li>
+</ol>
+
+<h2>"Bad" code</h2>
 {{#bs-dropdown as |dd|}}
   {{#dd.toggle}}
     This text should appear only once
   {{/dd.toggle}}
 {{/bs-dropdown}}
 
-{{#each foos as |foo|}}
-  {{#link-to "whatever"}}
-  {{/link-to}}
-{{/each}}
+{{#link-to "whatever"}}
+{{/link-to}}
